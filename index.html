@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Grilla.js"></script>    
+    <link href="index.css" rel="stylesheet" type="text/css">
+    <title>Document</title>
+</head>
+<body>       
+    <div id="Div_Usuarios">
+        <div id="d_form" style="position:absolute;">
+            <fieldset style="background-color:cornflowerblue;">
+                <legend id="legendFieldset" >Agregar Usuario:</legend>
+                <form action="">
+                    <label for="iptName">Nombre:</label>
+                    <br>
+                    <input id="iptName" type="text">
+                    <br>
+                    <label for="iptApellido">Apellido:</label>
+                    <br>
+                    <input id="iptApellido" type="text">
+                    <br>
+                    <label for="iptDireccion">Direccion:</label>
+                    <br>
+                    <input id="iptDireccion" type="text">
+                    <br>
+                    <label for="iptDNI">DNI:</label>
+                    <br>
+                    <input id="iptDNI" type="text">
+                    <br>
+                    <label for="iptEdad">Edad:</label>
+                    <br>
+                    <input id="iptEdad" type="text">
+                    <br>
+                    <br>                          
+                    <input id="btnAgregar" style="background-color:rgb(0, 102, 255);" type="button" value="Agregar" onclick="Agregar()">
+                    <input id="btnLimpiar" type="reset" value="Limpiar">
+                </form>
+            </fieldset>
+        </div>            
+        <div id="d_tabla" style="position: absolute; left: 50%;" >
+        </div>
+    </div>    
+</body>
+</html>

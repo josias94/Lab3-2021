@@ -1,0 +1,25 @@
+table{
+    padding: .1rem;
+    background-color: rgb(0, 0, 0); 
+}
+thead{
+    color: white;
+    background-color: rgb(76, 85, 212);    
+}
+tr, td{
+    padding: .2rem;
+    border:1px solid rgb(156, 152, 152);
+}
+tbody{
+    color: rgb(0, 0, 0);    
+    background-color: #6a849e;    
+}
+
+tfoot{
+    color: white;
+    background-color: gray;
+}
+
+input[type=text]{
+    background-color: cadetblue;
+}

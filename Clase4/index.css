@@ -23,3 +23,12 @@ tfoot{
 input[type=text]{
     background-color: cadetblue;
 }
+
+p{
+    color: rgb(76, 85, 212);
+    font-size: 15pt;
+}
+
+p.negrita{
+    font-weight: bold;
+}

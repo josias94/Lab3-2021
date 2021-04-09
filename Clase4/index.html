@@ -4,39 +4,74 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="Grilla.js" type="text/javascript"></script>  
+    <script src="Form.js" type="text/javascript"></script>  
     <script src="Grilla.js"></script>    
     <link href="index.css" rel="stylesheet" type="text/css">
     <title>Document</title>
 </head>
 <body>       
+    <header>
+        <h1>Titulo</h1>
+        <h2>Subtitulo</h2>
+        <nav>
+            <ul>
+                <li><a href="#section1">Item 1</a></li>
+                <li><a href="#section2">Item 2</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id = "section1">
+        <article>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolorem vel officiis debitis at alias eaque quos veniam, distinctio nesciunt fugit saepe eum voluptate exercitationem odio culpa illum aperiam amet.</p>
+        </article>
+        <article>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo veniam unde quam placeat hic saepe velit cumque magni eum, in laboriosam dolore ratione quas eligendi! Ullam dolor placeat tenetur mollitia!</p>
+        </article>
+    </section>
+    <section id = "section2">
+        <article>
+            <p class="negrita">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo sapiente earum eveniet ea minima asperiores, omnis illum pariatur alias. Perspiciatis enim saepe impedit culpa officiis dolore sit commodi maxime ratione.</p>
+        </article>
+        <article>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum explicabo aperiam, doloribus nulla delectus hic, eligendi quas, ipsam deserunt beatae eaque commodi. Ab assumenda rem molestiae iusto aperiam amet labore!</p>
+        </article>
+    </section>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
     <div id="Div_Usuarios">
         <div id="d_form" style="position:absolute;">
             <fieldset style="background-color:cornflowerblue;">
-                <legend id="legendFieldset" >Agregar Usuario:</legend>
+                <legend id="legendFieldset">Agregar Usuario:</legend>
                 <form action="">
                     <label for="iptName">Nombre:</label>
                     <br>
-                    <input id="iptName" type="text">
+                    <input id="iptName" type="text" value="aaaaa">
                     <br>
                     <label for="iptApellido">Apellido:</label>
                     <br>
-                    <input id="iptApellido" type="text">
+                    <input id="iptApellido" type="text" value = AAAAA>
                     <br>
                     <label for="iptDireccion">Direccion:</label>
                     <br>
-                    <input id="iptDireccion" type="text">
+                    <input id="iptDireccion" type="text" value = "aaaa aAAAAA">
                     <br>
                     <label for="iptDNI">DNI:</label>
                     <br>
-                    <input id="iptDNI" type="text">
+                    <input id="iptDNI" type="text" value = "12312414">
                     <br>
                     <label for="iptEdad">Edad:</label>
                     <br>
-                    <input id="iptEdad" type="text">
+                    <input id="iptEdad" type="text" value = "26">
                     <br>
-                    <br>                          
-                    <input id="btnAgregar" style="background-color:rgb(0, 102, 255);" type="button" value="Agregar" onclick="Agregar(this)">
+                    <br>                                              
+                    <input id="btnAgregar" style="background-color:rgb(0, 102, 255);" type="button" value="Agregar">
                     <input id="btnLimpiar" type="reset" value="Limpiar">
                 </form>
             </fieldset>

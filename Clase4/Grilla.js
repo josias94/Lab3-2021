@@ -1,14 +1,16 @@
 window.onload=function(){
     $_Table(document.getElementById("d_tbl"));
+    var btnAgregar = document.getElementById("btnAgregar");
+    btnAgregar.addEventListener("click", Agregar);
 }
 
 function $_Table(obj)
 {   
-    var array = [{"Nombre":"Barrett","Apellido":"Stafford","Direccion":"Gill","DNI":"Manning","Edad":1},{"Nombre":"Tyler","Apellido":"Copeland","Direccion":"Cannon","DNI":"Hansen","Edad":89},{"Nombre":"Castro","Apellido":"Hogan","Direccion":"Carpenter","DNI":"Aguilar","Edad":9},{"Nombre":"Reid","Apellido":"Edwards","Direccion":"Fuller","DNI":"Carter","Edad":48},{"Nombre":"Byers","Apellido":"Waters","Direccion":"Bray","DNI":"Bennett","Edad":51},{"Nombre":"Huff","Apellido":"Moody","Direccion":"Puckett","DNI":"House","Edad":14},{"Nombre":"Sexton","Apellido":"Potter","Direccion":"Trevino","DNI":"Fry","Edad":83},{"Nombre":"Henderson","Apellido":"Lyons","Direccion":"Fitzgerald","DNI":"Contreras","Edad":21},{"Nombre":"Young","Apellido":"Owens","Direccion":"Tyson","DNI":"Hodge","Edad":80},{"Nombre":"Rogers","Apellido":"Hawkins","Direccion":"Wolfe","DNI":"Boyd","Edad":47},{"Nombre":"Pratt","Apellido":"Parker","Direccion":"Santiago","DNI":"Holman","Edad":70},{"Nombre":"Wagner","Apellido":"Lynn","Direccion":"Buckner","DNI":"Baxter","Edad":19},{"Nombre":"Hartman","Apellido":"Mcconnell","Direccion":"Moreno","DNI":"Vance","Edad":2},{"Nombre":"Walsh","Apellido":"Allen","Direccion":"Stokes","DNI":"Pittman","Edad":8},{"Nombre":"Kim","Apellido":"Sampson","Direccion":"Mccullough","DNI":"Schultz","Edad":1},{"Nombre":"Swanson","Apellido":"Hoover","Direccion":"Mathis","DNI":"Blankenship","Edad":63},{"Nombre":"Livingston","Apellido":"Russell","Direccion":"Cohen","DNI":"Malone","Edad":19},{"Nombre":"Norton","Apellido":"Shepherd","Direccion":"Mclaughlin","DNI":"Freeman","Edad":86},{"Nombre":"Payne","Apellido":"Church","Direccion":"Marshall","DNI":"Horton","Edad":71},{"Nombre":"Avery","Apellido":"Nieves","Direccion":"Trujillo","DNI":"Battle","Edad":48}];
-    //var arraykeys = Object.keys(array[0]);    
-    var arraykeys = ["Nombre", "Apellido", "Direccion", "DNI", "Edad"];//TODO: Sirve para harcorar el header
+    var array = [{"Id":0,"Nombre":"Hickman","Apellido":"Suarez","Direccion":"Conway Street","Edad":39,"Sexo":"male"},{"Id":1,"Nombre":"Powell","Apellido":"Kaufman","Direccion":"Canton Court","Edad":49,"Sexo":"male"},{"Id":2,"Nombre":"Gutierrez","Apellido":"Briana","Direccion":"Garfield Place","Edad":7,"Sexo":"female"},{"Id":3,"Nombre":"Francis","Apellido":"Peters","Direccion":"Centre Street","Edad":39,"Sexo":"male"},{"Id":4,"Nombre":"Jacobs","Apellido":"Walters","Direccion":"Raleigh Place","Edad":57,"Sexo":"male"},{"Id":5,"Nombre":"Ramsey","Apellido":"Chandra","Direccion":"Pleasant Place","Edad":25,"Sexo":"female"},{"Id":6,"Nombre":"Mullins","Apellido":"Althea","Direccion":"Hegeman Avenue","Edad":60,"Sexo":"female"},{"Id":7,"Nombre":"Coffey","Apellido":"Rosemarie","Direccion":"Emerson Place","Edad":79,"Sexo":"female"},{"Id":8,"Nombre":"Maldonado","Apellido":"Nannie","Direccion":"Monaco Place","Edad":76,"Sexo":"female"},{"Id":9,"Nombre":"Noble","Apellido":"Felecia","Direccion":"Morgan Avenue","Edad":1,"Sexo":"female"}];
+    var arraykeys = Object.keys(array[0]);    
+    //var arraykeys = ["Nombre", "Apellido", "Direccion", "DNI", "Edad"];//TODO: Sirve para harcorar el header
     var tabla = document.createElement("table");
-    
+    SetId(tabla, obj.id);
     if(array.length == 0){
         tabla.hidden = true;
     }
@@ -70,10 +72,15 @@ function $_Tfoot(array){
     return tFoot;
 }
 
+function SetId(obj, parentId, i){
+    obj.id = parentId + "_" + obj.nodeName.toLowerCase();
+    if(i != undefined)
+    obj.id += "_" + i;
+}
 
-function Agregar(obj){
 
-    var form = obj.parentNode;
+function Agregar(){        
+    var form = event.target.parentNode;
     var tr = document.createElement("tr");
     
     for (i = 0; i < form.length; i++) {        
@@ -84,9 +91,9 @@ function Agregar(obj){
     }
     var div = form.parentNode.parentNode.parentNode;
 
-    var tablaFind = FindTable(form);
+    //var tablaFind = FindTable(form);
 
-    var tabla = document.getElementById("d_tbl");
+    var tabla = document.getElementById("d_tbl_table");
     tabla.hidden = false;
 
     var body = "";

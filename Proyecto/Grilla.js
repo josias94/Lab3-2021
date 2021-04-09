@@ -1,5 +1,5 @@
 window.onload=function(){
-    $_Table(document.getElementById("d_tabla"));
+    $_Table(document.getElementById("d_tbl"));
 }
 
 function $_Table(obj)
@@ -8,7 +8,6 @@ function $_Table(obj)
     //var arraykeys = Object.keys(array[0]);    
     var arraykeys = ["Nombre", "Apellido", "Direccion", "DNI", "Edad"];//TODO: Sirve para harcorar el header
     var tabla = document.createElement("table");
-    SetId(tabla, obj.id);
     if(array.length == 0){
         tabla.hidden = true;
     }
@@ -24,8 +23,7 @@ function $_Thead(arraykeys){
     var thead = document.createElement("thead");
     for(i = 0; i< arraykeys.length; i++)
     {
-        var th = document.createElement("th");
-        SetId(th, thead.id, i); 
+        var th = document.createElement("th"); 
         th.appendChild(document.createTextNode(arraykeys[i]));
         thead.appendChild(th);
     }    
@@ -71,15 +69,24 @@ function $_Tfoot(array){
     return tFoot;
 }
 
-function SetId(obj, parentId, i){
-    obj.id = parentId + "_" + obj.nodeName.toLowerCase();
-    if(i != undefined)
-    obj.id += "_" + i;
-}
 
 
-function Agregar(){
-    var tabla = document.getElementById("d_tabla_table");
+function Agregar(obj){
+
+    var form = obj.parentNode;
+    var tr = document.createElement("tr");
+    
+    for (i = 0; i < form.length; i++) {        
+        //if(aux.type != "button" && aux.type != "reset"){
+        if(form[i].type == "text"){
+            tr.appendChild($_Td(form[i].value));        
+        }
+    }
+    var div = form.parentNode.parentNode.parentNode;
+
+    var tablaFind = FindTable(form);
+
+    var tabla = document.getElementById("d_tbl");
     tabla.hidden = false;
 
     var body = "";
@@ -88,14 +95,24 @@ function Agregar(){
             body = element;
         }
     });
-    
 
-    var tr = document.createElement("tr");
-    tr.appendChild($_Td(document.getElementById("iptName").value));
-    tr.appendChild($_Td(document.getElementById("iptApellido").value));
-    tr.appendChild($_Td(document.getElementById("iptDireccion").value));
-    tr.appendChild($_Td(document.getElementById("iptDNI").value));
-    tr.appendChild($_Td(document.getElementById("iptEdad").value));
     body.appendChild(tr);
+}
+
+function FindTable(parentNode){
+    var retorno = null;
+    var obj = parentNode;
+    obj.childNodes.forEach(element => {
+        if(element.localName == "table"){
+            retorno = element;
+        }        
+    });
+    if(retorno == null){
+        return FindTable(parentNode.parentNode);
+    }
+    else{
+        return retorno;
+    }
+    
 }
 

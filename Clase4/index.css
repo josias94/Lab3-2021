@@ -18,12 +18,12 @@ p{
     color: white;
     border: none;
     font-size: 16px;
-    margin: .1rem;
+    margin: 4px;
     cursor: pointer;    
     width: 100px;
     height: 50px;
     border-radius: 10px;
-    padding-left: 0px;
+    padding:14px 20px;
 }
 .boton:hover{
     background-color: green
@@ -32,9 +32,65 @@ p{
     background-color: red
 }
 
+.contenedor{
+    background-color: cornflowerblue;
+    width: 50%;
+    height: 150%;
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 11px 10px 3px 0px rgba(0,0,0,0.75);
+}
+
+label{
+    margin: 4px 4px;
+
+}
+
+input[type=text]{
+    width: 100%;
+    margin: 8px;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 12px 20px;
+}
+
+table{
+    margin-top: 10px;
+    width: 100%;
+    border-collapse: collapse;
+}
+th{
+    background-color: lightseagreen;
+    color:white;
+    padding: 8px;
+    text-align: left;
+}
+td{
+    padding: 8px;
+
+}
+.conError{
+    border: solid red;
+}
+
+.sinError{
+    border:black
+}
+
+tr:nth-child(even)
+{
+    background-color: #f2f2f2;
+}
 
 
-/*MIO*/
+
+
+
+
+
+
+/* MIO
 table{
     padding: .1rem;
     background-color: rgb(0, 0, 0); 
@@ -55,9 +111,9 @@ tbody{
 tfoot{
     color: white;
     background-color: gray;
-}
+} */
 
-input[type=text]{
+/* input[type=text]{
     background-color: cadetblue;
-}
+} */
 

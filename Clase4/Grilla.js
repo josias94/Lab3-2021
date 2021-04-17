@@ -1,8 +1,8 @@
-window.onload=function(){
-    $_Table(document.getElementById("d_tbl"));
-    let btnAgregar = document.getElementById("btnAgregar");
-    btnAgregar.addEventListener("click", Agregar);
-}
+// window.onload=function(){
+//     $_Table(document.getElementById("d_tbl"));
+//     let btnAgregar = document.getElementById("btnAgregar");
+//     btnAgregar.addEventListener("click", Agregar);
+// }
 
 function $_Table(obj)
 {   

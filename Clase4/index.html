@@ -11,7 +11,7 @@
     <title>Document</title>
 </head>
 <body>       
-    <header>
+    <!-- <header>
         <h1>Titulo</h1>
         <h2>Subtitulo</h2>
         <nav>
@@ -29,8 +29,6 @@
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo veniam unde quam placeat hic saepe velit cumque magni eum, in laboriosam dolore ratione quas eligendi! Ullam dolor placeat tenetur mollitia!</p>
         </article>
     </section>
-    <input type="button" class="boton" value="Sumar">
-    <input type="button" class="boton rojo" value="Limpiar">
     <section id = "section2">
         <article>
             <p class="negrita">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo sapiente earum eveniet ea minima asperiores, omnis illum pariatur alias. Perspiciatis enim saepe impedit culpa officiis dolore sit commodi maxime ratione.</p>
@@ -41,17 +39,49 @@
         <article>
             <p>basandose en lo de sumar los botones, tienen que crear un boton de limpiar cambiando el stilo que se borren los datos, y cuando tocan sumar validen que los numeros sean mayores a cero, , si es negativo, se tiene que poner el backgrount en rojo para marcar el error</p>
         </article>
-    </section>
+    </section> -->
+    <!-- <label for="num1">Numero 1:</label>
+    <br>
+    <input type="number" id="num1">
+    <br>
+    <label for="num2">Numero 2:</label>
+    <br>
+    <input type="number" id="num2">
+    <br>
+    <input type="button" class="boton" value="Sumar">
+    <input type="button" class="boton rojo" value="Limpiar"> -->
+   
+
+    <div class="contenedor">
+        <label for="impNombre">Nombre</label><br>        
+        <input type="text" class="sinError" id="impNombre" value="">
+        <label for="impApellido">Apellido</label><br>        
+        <input type="text" id="impApellido" value="">  
+        <input type="text" id="impGuardar" class="boton" value="Guardar">
+    </div>    
+    <table>
+        <thead>
+
+        </thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Accion</th>
+        </tr>
+        <tbody id="tbody">
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-
-    <div id="Div_Usuarios">
+    <!-- <div id="Div_Usuarios">
         <div id="d_form" style="position:absolute;">
             <fieldset style="background-color:cornflowerblue;">
                 <legend id="legendFieldset">Agregar Usuario:</legend>
@@ -84,6 +114,6 @@
         </div>            
         <div id="d_tbl" style="position: absolute; left: 50%;" >
         </div>
-    </div>    
+    </div>     -->
 </body>
 </html>

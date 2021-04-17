@@ -28,7 +28,6 @@ function AgregarPersona(){
     var tdApellido = $_Td(apellido.value);
     var tdNombre = $_Td(nombre.value);   
     var tdAccion = $_Td("");
-    //tdAccion.innerHTML = "<a href=\"#\" onclick=\"Borrar(this)\">borrar</a>";
     var a = document.createElement("a");
     a.appendChild(document.createTextNode("Borrar"));
     a.setAttribute("href","#");

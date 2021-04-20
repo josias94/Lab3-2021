@@ -1,8 +1,8 @@
-window.onload=function(){
-    $_Table(document.getElementById("d_tbl"));
-    let btnAgregar = document.getElementById("btnAgregar");
-    btnAgregar.addEventListener("click", Agregar);
-}
+// window.onload=function(){
+//     $_Table(document.getElementById("d_tbl"));
+//     let btnAgregar = document.getElementById("btnAgregar");
+//     btnAgregar.addEventListener("click", Agregar);
+// }
 
 function $_Table(obj)
 {   
@@ -107,6 +107,14 @@ function Agregar(){
     body.appendChild(tr);
 }
 
+function Create(element){
+    return document.createElement(element);
+}
+
+function CreateText(text){
+    return document.createTextNode(text);
+}
+
 function FindTable(parentNode){
     var retorno = null;
     var obj = parentNode;
@@ -120,7 +128,6 @@ function FindTable(parentNode){
     }
     else{
         return retorno;
-    }
-    
+    }    
 }
 

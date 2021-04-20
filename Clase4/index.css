@@ -68,7 +68,6 @@ th{
 }
 td{
     padding: 8px;
-
 }
 .conError{
     border: solid red;
@@ -82,10 +81,6 @@ tr:nth-child(even)
 {
     background-color: #f2f2f2;
 }
-
-
-
-
 
 
 

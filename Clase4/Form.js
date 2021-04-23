@@ -46,6 +46,8 @@ function AgregarPersona(){
         tr.appendChild(tdApellido);
         tr.appendChild(tdAccion);
 
+        tr.id = "tr"+cuerpo.childNodes.length;
+        
         cuerpo.appendChild(tr);
 
         $("impNombre").value = "";
@@ -66,9 +68,9 @@ function Borrar(ev){
 function TraerDatos(ev){
     let tr = ev.target.parentNode;    
     $("impNombre").value = tr.childNodes[0].innerHTML;
-    $("impApellido").value = tr.childNodes[1].innerHTML;
+    $("impApellido").value = tr.childNodes[1].innerHTML;    
     let btn = $("btnGuardar");
-    btn.setAttribute("i",tr.rowIndex);
+    btn.setAttribute("i",tr.id);
     btn.removeEventListener("click", AgregarPersona);
     btn.addEventListener("click", ModificarPersona);
 }
@@ -83,15 +85,18 @@ function ModificarPersona(ev){
     let cuerpo = $("tbody");
     let tr = "";
     cuerpo.childNodes.forEach(element => {
-        if(element.rowIndex == i)
+        if(element.id == i)
         {
             tr = element;
         }
     });    
 
-    tr.childNodes[0].innerHTML = $("impNombre").value;
-    tr.childNodes[1].innerHTML = $("impApellido").value;
-
-
-
+    if(tr != "")
+    {
+        tr.childNodes[0].innerHTML = $("impNombre").value;
+        tr.childNodes[1].innerHTML = $("impApellido").value;
+    }
+    else{
+        alert("usuario inexistente");
+    }
 }

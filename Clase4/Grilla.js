@@ -5,8 +5,7 @@
 // }
 
 function $_Table(obj, array)
-{   
-    //let array = [{"Nombre":"Roach","Apellido":"Acosta","Direccion":"Eastern Parkway","DNI":18653032,"Edad":58},{"Nombre":"Combs","Apellido":"Jessica","Direccion":"Butler Street","DNI":14107678,"Edad":15},{"Nombre":"Morton","Apellido":"Lester","Direccion":"Falmouth Street","DNI":18529534,"Edad":86},{"Nombre":"Best","Apellido":"Tessa","Direccion":"Elliott Place","DNI":26863283,"Edad":72},{"Nombre":"Wiggins","Apellido":"Avis","Direccion":"Garden Place","DNI":14835965,"Edad":34},{"Nombre":"Armstrong","Apellido":"Marla","Direccion":"Anchorage Place","DNI":32522878,"Edad":61},{"Nombre":"Ramsey","Apellido":"Delgado","Direccion":"Crown Street","DNI":18196722,"Edad":55},{"Nombre":"Wade","Apellido":"Odessa","Direccion":"Highland Boulevard","DNI":31441371,"Edad":59},{"Nombre":"Walker","Apellido":"Maryann","Direccion":"Fulton Street","DNI":6319193,"Edad":62},{"Nombre":"Russo","Apellido":"Gail","Direccion":"Cherry Street","DNI":1548932,"Edad":47}];    
+{       
     let arraykeys = Object.keys(array[0]);    
     //var arraykeys = ["Nombre", "Apellido", "Direccion", "DNI", "Edad"];//TODO: Sirve para harcorar el header
     let tabla = document.createElement("table");
@@ -40,6 +39,7 @@ function $_Tbody(array){
     {
         var arraykeys = Object.keys(array[i]);//TODO: Revisar muestra las propiedades aunque los objetos tengan distinta estructura, mas completo - menos performante 
         var tr = document.createElement("tr");
+        tr.id = "tr"+i;
         arraykeys.forEach(element => {
             tr.appendChild($_Td(array[i][element]));
         });        

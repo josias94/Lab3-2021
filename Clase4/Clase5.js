@@ -23,7 +23,7 @@ function PeticionPOST(){
             }
         }        
     }
-    var persona = {"nombre":"Josias","apellido":"Rivola","telefono":"1165891874","fecha":"2020-04-23"};
+    var persona = {"nombre":"Josias","apellido":"Rivola","fecha":"2020-04-23","telefono":"1165891874"};
 
     peticionHttp.open("POST","http://localhost:3000/nuevaPersona");
     peticionHttp.setRequestHeader("content-type", "application/json");

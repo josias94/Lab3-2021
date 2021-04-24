@@ -1,5 +1,5 @@
 window.addEventListener("load",function(){
-    PeticionGET();
+    //PeticionGET();
     var btn= $("btnGuardar");
     btn.addEventListener("click",AgregarPersona);
 });
@@ -7,6 +7,7 @@ window.addEventListener("load",function(){
 function AgregarPersona(){
     let nombre = $("impNombre");
     let apellido = $("impApellido");
+    let telefono = $("impTel");
     let sinError = true;
     if(nombre.value != ""){
         nombre.className = "sinError";
@@ -21,6 +22,14 @@ function AgregarPersona(){
     }
     else{
         apellido.className = "conError";
+        sinError = false;
+    }
+
+    if(telefono.value != ""){
+        telefono.className = "sinError";
+    }
+    else{
+        telefono.className = "conError";
         sinError = false;
     }
     

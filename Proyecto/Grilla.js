@@ -1,12 +1,24 @@
 window.onload=function(){
-    $_Table(document.getElementById("d_tbl"));
+
+    var peticionHttp = new XMLHttpRequest();
+    peticionHttp.onreadystatechange = function(){
+        if(peticionHttp.readyState == 4){
+            if(peticionHttp.status == 200){            
+                array = JSON.parse(peticionHttp.responseText);                
+                $_Table(document.getElementById("d_tbl"), array);
+            }
+        }        
+    }
+    peticionHttp.open("GET","https://607eee2c02a23c0017e8c685.mockapi.io/users");
+    peticionHttp.setRequestHeader("content-type", "application/json")
+    peticionHttp.send();    
 }
 
-function $_Table(obj)
-{   
-    var array = [{"Nombre":"Barrett","Apellido":"Stafford","Direccion":"Gill","DNI":"Manning","Edad":1},{"Nombre":"Tyler","Apellido":"Copeland","Direccion":"Cannon","DNI":"Hansen","Edad":89},{"Nombre":"Castro","Apellido":"Hogan","Direccion":"Carpenter","DNI":"Aguilar","Edad":9},{"Nombre":"Reid","Apellido":"Edwards","Direccion":"Fuller","DNI":"Carter","Edad":48},{"Nombre":"Byers","Apellido":"Waters","Direccion":"Bray","DNI":"Bennett","Edad":51},{"Nombre":"Huff","Apellido":"Moody","Direccion":"Puckett","DNI":"House","Edad":14},{"Nombre":"Sexton","Apellido":"Potter","Direccion":"Trevino","DNI":"Fry","Edad":83},{"Nombre":"Henderson","Apellido":"Lyons","Direccion":"Fitzgerald","DNI":"Contreras","Edad":21},{"Nombre":"Young","Apellido":"Owens","Direccion":"Tyson","DNI":"Hodge","Edad":80},{"Nombre":"Rogers","Apellido":"Hawkins","Direccion":"Wolfe","DNI":"Boyd","Edad":47},{"Nombre":"Pratt","Apellido":"Parker","Direccion":"Santiago","DNI":"Holman","Edad":70},{"Nombre":"Wagner","Apellido":"Lynn","Direccion":"Buckner","DNI":"Baxter","Edad":19},{"Nombre":"Hartman","Apellido":"Mcconnell","Direccion":"Moreno","DNI":"Vance","Edad":2},{"Nombre":"Walsh","Apellido":"Allen","Direccion":"Stokes","DNI":"Pittman","Edad":8},{"Nombre":"Kim","Apellido":"Sampson","Direccion":"Mccullough","DNI":"Schultz","Edad":1},{"Nombre":"Swanson","Apellido":"Hoover","Direccion":"Mathis","DNI":"Blankenship","Edad":63},{"Nombre":"Livingston","Apellido":"Russell","Direccion":"Cohen","DNI":"Malone","Edad":19},{"Nombre":"Norton","Apellido":"Shepherd","Direccion":"Mclaughlin","DNI":"Freeman","Edad":86},{"Nombre":"Payne","Apellido":"Church","Direccion":"Marshall","DNI":"Horton","Edad":71},{"Nombre":"Avery","Apellido":"Nieves","Direccion":"Trujillo","DNI":"Battle","Edad":48}];
-    //var arraykeys = Object.keys(array[0]);    
-    var arraykeys = ["Nombre", "Apellido", "Direccion", "DNI", "Edad"];//TODO: Sirve para harcorar el header
+function $_Table(obj, array)
+{       
+    //var array = [{"Nombre":"Barrett","Apellido":"Stafford","Direccion":"Gill","DNI":"Manning","Edad":1},{"Nombre":"Tyler","Apellido":"Copeland","Direccion":"Cannon","DNI":"Hansen","Edad":89},{"Nombre":"Castro","Apellido":"Hogan","Direccion":"Carpenter","DNI":"Aguilar","Edad":9},{"Nombre":"Reid","Apellido":"Edwards","Direccion":"Fuller","DNI":"Carter","Edad":48},{"Nombre":"Byers","Apellido":"Waters","Direccion":"Bray","DNI":"Bennett","Edad":51},{"Nombre":"Huff","Apellido":"Moody","Direccion":"Puckett","DNI":"House","Edad":14},{"Nombre":"Sexton","Apellido":"Potter","Direccion":"Trevino","DNI":"Fry","Edad":83},{"Nombre":"Henderson","Apellido":"Lyons","Direccion":"Fitzgerald","DNI":"Contreras","Edad":21},{"Nombre":"Young","Apellido":"Owens","Direccion":"Tyson","DNI":"Hodge","Edad":80},{"Nombre":"Rogers","Apellido":"Hawkins","Direccion":"Wolfe","DNI":"Boyd","Edad":47},{"Nombre":"Pratt","Apellido":"Parker","Direccion":"Santiago","DNI":"Holman","Edad":70},{"Nombre":"Wagner","Apellido":"Lynn","Direccion":"Buckner","DNI":"Baxter","Edad":19},{"Nombre":"Hartman","Apellido":"Mcconnell","Direccion":"Moreno","DNI":"Vance","Edad":2},{"Nombre":"Walsh","Apellido":"Allen","Direccion":"Stokes","DNI":"Pittman","Edad":8},{"Nombre":"Kim","Apellido":"Sampson","Direccion":"Mccullough","DNI":"Schultz","Edad":1},{"Nombre":"Swanson","Apellido":"Hoover","Direccion":"Mathis","DNI":"Blankenship","Edad":63},{"Nombre":"Livingston","Apellido":"Russell","Direccion":"Cohen","DNI":"Malone","Edad":19},{"Nombre":"Norton","Apellido":"Shepherd","Direccion":"Mclaughlin","DNI":"Freeman","Edad":86},{"Nombre":"Payne","Apellido":"Church","Direccion":"Marshall","DNI":"Horton","Edad":71},{"Nombre":"Avery","Apellido":"Nieves","Direccion":"Trujillo","DNI":"Battle","Edad":48}];
+    var arraykeys = Object.keys(array[0]);    
+    //var arraykeys = ["Nombre", "Apellido", "Direccion", "DNI", "Edad"];//TODO: Sirve para harcorar el header
     var tabla = document.createElement("table");
     if(array.length == 0){
         tabla.hidden = true;

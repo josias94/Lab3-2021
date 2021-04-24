@@ -1,5 +1,5 @@
-// window.onload(cargar);
 window.addEventListener("load",function(){
+    PeticionGET();
     var btn= $("btnGuardar");
     btn.addEventListener("click",AgregarPersona);
 });
@@ -99,4 +99,6 @@ function ModificarPersona(ev){
     else{
         alert("usuario inexistente");
     }
+    $("impNombre").value = "";
+    $("impApellido").value = "";
 }

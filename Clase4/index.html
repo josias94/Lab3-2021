@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="index.css" rel="stylesheet" type="text/css">
     <script src="Form.js" type="text/javascript"></script>  
-    <script src="Grilla.js"></script>    
+    <script src="Grilla.js"></script>
+    <script src="Clase5.js"></script>    
     
     <title>Document</title>
 </head>
@@ -15,11 +16,17 @@
         <label for="impNombre">Nombre</label><br>        
         <input type="text" class="sinError" id="impNombre" value="">
         <label for="impApellido">Apellido</label><br>        
-        <input type="text" id="impApellido" value="">  
+        <input type="text" id="impApellido" value=""> 
+        <label for="impApellido">Telefono</label><br>        
+        <input type="text" id="impApellido" value=""> 
+          
         <input type="button" id="btnGuardar" class="boton" value="Guardar">
+        <input type="button" id="btnMandar" class="boton" value="GET" onclick="PeticionGET()">
+        <input type="button" id="btnPOST" class="boton" value="POST" onclick="PeticionPOST()">
+        <input type="button" id="btnPerrito" class="boton" value="Perrito" onclick="GetPerrito()">
         
     </div>    
-    <table>
+    <!-- <table>
         <thead>
             <tr>
                 <th>Nombre</th>
@@ -30,6 +37,12 @@
         <tbody id="tbody">
         </tbody>
         <tfoot></tfoot>
-    </table>
+    </table> -->
+    <div id = "d_tbl">
+
+    </div>
+    <div id = "divPeticion">
+
+    </div>
 </body>
 </html>

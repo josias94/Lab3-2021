@@ -1,7 +1,7 @@
 window.addEventListener("load",function(){
-    //PeticionGET();
-    var btn= $("btnGuardar");
-    btn.addEventListener("click",AgregarPersona);
+    PeticionGET();
+    // var btn= $("btnGuardar");    
+    // btn.addEventListener("click",AgregarPersona);
 });
 
 function AgregarPersona(){

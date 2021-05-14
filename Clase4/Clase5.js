@@ -1,10 +1,13 @@
 function PeticionGET(){
     var peticionHttp = new XMLHttpRequest();
-
+    $("preview-area").hidden = false;
     peticionHttp.onreadystatechange = function(){
         if(peticionHttp.readyState == 4){
-            if(peticionHttp.status == 200){            
-                $_Table(document.getElementById("d_tbl"), JSON.parse(peticionHttp.responseText));
+            if(peticionHttp.status == 200){  
+                let array = JSON.parse(peticionHttp.responseText);
+                let parte = array.slice(0, 15);
+                $("preview-area").hidden = true;
+                $_Table(document.getElementById("d_tbl"), parte);
             }
         }        
     }
@@ -14,18 +17,33 @@ function PeticionGET(){
 
 function PeticionPOST(){
     var peticionHttp = new XMLHttpRequest();
-
+    $("preview-area").hidden = false;
     peticionHttp.onreadystatechange = function(){
         if(peticionHttp.readyState == 4){
             if(peticionHttp.status == 200){
                 let array = peticionHttp.responseText;                            
-                console.log(array);               
+                console.log(array);   
+                $("preview-area").hidden = true;
+                
+                if(JSON.parse(array).type == undefined){
+                    Agregar(array);
+                }
+                
             }
         }        
     }
-    var persona = {"nombre":"Josias","apellido":"Rivola","fecha":"2020-04-23","telefono":"1165891874"};
+    let nombre = $("impNombre").value;
+    let apellido = $("impApellido").value;
+    var f = new Date();    
+    let sexo = $("impSex").value;
+    let fecha = f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear();
+    let telefono = $("impTel").value;
 
-    peticionHttp.open("POST","http://localhost:3000/nuevaPersona");
+    // var persona = {"nombre":nombre,"apellido":apellido,"fecha":fecha,"telefono":telefono,"sexo":sexo};
+    var persona = {"nombre":nombre,"apellido":apellido,"fecha":fecha,"sexo":sexo};
+
+    // peticionHttp.open("POST","http://localhost:3000/nuevaPersona");
+    peticionHttp.open("POST","http://localhost:3000/nueva");
     peticionHttp.setRequestHeader("content-type", "application/json");
     peticionHttp.send(JSON.stringify(persona));
 }
